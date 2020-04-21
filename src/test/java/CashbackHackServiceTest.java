@@ -1,3 +1,4 @@
+import com.codeborne.selenide.SelenideElement;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -32,7 +33,7 @@ public class CashbackHackServiceTest {
     }
 
     @Test
-    void shouldTestSomething() {
+        void shouldTestSomething() {
         driver.get("http://localhost:9999");
         List<WebElement> elements = driver.findElements(By.className("input__control"));
         elements.get(0).sendKeys("Василий");
@@ -42,4 +43,14 @@ public class CashbackHackServiceTest {
         String text = driver.findElement(By.className("alert-success")).getText();
         assertEquals("Ваша заявка успешно отправлена!", text.trim());
     }
+//    @Test
+//    void shouldSubmitRequest(){
+//        open("http://localhost:9999");
+//        SelenideElement form = $("[data-test-id=callback-form]");
+//        form.$("[data-test-id=name]input").setValue("Василий");
+//        form.$("[data-test-id=phone]input").setValue("+79270000000");
+//        form.$("[data-test-id=agreement]").click();
+//        form.$("[data-test-id=submit]").click();
+//        $(".alert-success").shouldHave(exactText("Ваша заявка успешно отправлена!"));
+//    }
 }
